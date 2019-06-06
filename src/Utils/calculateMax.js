@@ -11,7 +11,8 @@ const rpeMap = {
   10: [0, 1, 0.96, 0.92, 0.89, 0.86, 0.84, 0.81, 0.79, 0.76, 0.74]
 }
 
-
+//input: weight and reps for the set along with estimated rpe
+//output: estimated 1 rep max for given inputs
 function calculateMax(weight, reps, rpe) {
 
   if (!rpeMap[rpe] || !rpeMap[rpe][reps]) {

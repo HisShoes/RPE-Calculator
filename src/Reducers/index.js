@@ -1,7 +1,19 @@
 import { combineReducers } from 'redux';
 
-const rootReducer = combineReducers({
-  dummyReducer: () => 'temp reducer until real one implemented'
-});
+import calculateMax from '../Utils/calculateMax';
 
-export default rootReducer;
+const currentSetReducer = (currentSet = null, action) => {
+  if(action.type === 'CURRENT_SET_COMPLETE') {
+    let max = calculateMax(currentSet.weight, currentSet.reps, currentSet.rpe);
+    return {
+      ...currentSet,
+      max
+    }
+  }
+
+  return currentSet;
+}
+
+export default combineReducers({
+  currentSet: currentSetReducer
+});
