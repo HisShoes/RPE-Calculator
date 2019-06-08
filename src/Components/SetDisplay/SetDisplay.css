@@ -7,3 +7,13 @@
   grid-template-columns: 2fr 1fr;
   grid-column-gap: 1em;
 }
+
+p, div .field {
+  margin-bottom: 1em !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .set-container {
+    grid-template-columns: 1fr;
+  }
+}
