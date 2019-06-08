@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
 
-import RpeSetDisplay from '../RpeSetDisplay/RpeSetDisplay'
+import RpeSetDisplay from '../SetDisplay/SetDisplay';
 
 describe('App', () => {
   let wrapper;
