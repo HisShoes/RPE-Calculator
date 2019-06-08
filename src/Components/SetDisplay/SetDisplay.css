@@ -1,3 +1,7 @@
+.read-only-label {
+  margin-bottom: 1em !important;
+}
+
 .set-container {
   display: grid;
   grid-template-columns: 2fr 1fr;
