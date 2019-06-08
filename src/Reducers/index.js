@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import calculateMax from '../Utils/calculateMax';
+import {calculateMax} from '../Utils/setCalculations';
 
 const currentSetReducer = (currentSet = {}, action) => {
   if(action.type === 'CURRENT_SET') {

@@ -13,7 +13,7 @@ const rpeMap = {
 
 //input: weight and reps for the set along with estimated rpe
 //output: estimated 1 rep max for given inputs
-function calculateMax(weight, reps, rpe) {
+export const calculateMax = (weight, reps, rpe) => {
   if(!weight || !reps || !rpe) {
     return null;
   }
@@ -25,5 +25,16 @@ function calculateMax(weight, reps, rpe) {
   return Math.floor(weight / rpeMap[rpe][reps]);
 }
 
+//input: estimated 1 rep max, reps and rpe for the set
+//output: the estimated weight that should be used for the set
+export const calculateSetWeight = (estimatedMax, reps, rpe) => {
+  if(!estimatedMax || !reps || !rpe) {
+    return null;
+  }
 
-export default calculateMax;
+  if (!rpeMap[rpe] || !rpeMap[rpe][reps]) {
+    return null;
+  }
+  
+  return Math.floor(estimatedMax * rpeMap[rpe][reps]);
+}
